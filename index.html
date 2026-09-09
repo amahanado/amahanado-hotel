@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amahana-dō · In-room Thai Massage at Hiyoshi Ryokan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive:#4B5A3A;
+    --olive-dark:#38412C;
+    --beige:#F4EFE3;
+    --beige-line:#D9CDB2;
+    --cream:#FBF9F4;
+    --gold:#9C8654;
+    --text:#2E2B24;
+    --subtext:#6B6455;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--text);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  .page{
+    max-width:480px;
+    margin:0 auto;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+
+  /* ---------- top band ---------- */
+  .band{
+    background:var(--olive);
+    padding:34px 28px 30px;
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .band svg.wisp{
+    position:absolute;
+    right:-30px;
+    top:-20px;
+    width:190px;
+    height:190px;
+    opacity:0.16;
+  }
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-size:26px;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+  .location-line{
+    margin-top:6px;
+    font-size:14px;
+    color:var(--beige);
+    opacity:0.85;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:38px 28px 8px;
+  }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:30px;
+    line-height:1.25;
+    margin:0 0 14px;
+    color:var(--olive-dark);
+    max-width:22ch;
+  }
+  .hero p{
+    font-size:16px;
+    color:var(--subtext);
+    margin:0 0 22px;
+    max-width:34ch;
+  }
+
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--beige-line);
+    background:var(--beige);
+    border-radius:100px;
+    padding:8px 16px;
+    font-size:14px;
+    color:var(--olive-dark);
+    font-weight:500;
+  }
+  .pill .dot{
+    width:5px;height:5px;border-radius:50%;
+    background:var(--gold);
+    flex:none;
+  }
+
+  /* ---------- rule ---------- */
+  .rule{
+    height:1px;
+    background:var(--beige-line);
+    margin:30px 28px;
+  }
+
+  /* ---------- therapist ---------- */
+  .therapist{
+    padding:0 28px;
+  }
+  .therapist h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:19px;
+    color:var(--olive-dark);
+    margin:0 0 4px;
+  }
+  .therapist .name{
+    font-size:14px;
+    color:var(--subtext);
+    margin:0 0 18px;
+  }
+  .facts{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .facts li{
+    display:flex;
+    gap:12px;
+    padding:11px 0;
+    border-top:1px solid var(--beige-line);
+    font-size:15px;
+    color:var(--text);
+  }
+  .facts li:last-child{
+    border-bottom:1px solid var(--beige-line);
+  }
+  .facts li::before{
+    content:"";
+    width:5px;height:5px;
+    border-radius:50%;
+    background:var(--olive);
+    margin-top:9px;
+    flex:none;
+  }
+
+  .philosophy{
+    margin:26px 0 4px;
+    padding:20px 20px;
+    background:var(--beige);
+    border-radius:4px;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:16px;
+    line-height:1.55;
+    color:var(--olive-dark);
+  }
+  .philosophy .signature{
+    display:block;
+    margin-top:10px;
+    font-family:'Work Sans', sans-serif;
+    font-style:normal;
+    font-size:13px;
+    color:var(--subtext);
+  }
+
+  /* ---------- availability ---------- */
+  .availability{
+    padding:0 28px;
+  }
+  .availability h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:19px;
+    color:var(--olive-dark);
+    margin:0 0 4px;
+  }
+  .avail-note{
+    font-size:13px;
+    color:var(--subtext);
+    margin:0 0 14px;
+  }
+  .calendar-frame{
+    border:1px solid var(--beige-line);
+    border-radius:4px;
+    overflow:hidden;
+    background:var(--beige);
+  }
+
+  /* ---------- cta ---------- */
+  .cta-wrap{
+    padding:34px 28px 10px;
+  }
+  .cta{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:var(--olive-dark);
+    color:var(--cream);
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:16px;
+    padding:17px 20px;
+    border-radius:4px;
+    letter-spacing:0.01em;
+    transition:background 0.15s ease;
+  }
+  .cta:active{
+    background:var(--olive);
+  }
+  .cta-note{
+    text-align:center;
+    font-size:13px;
+    color:var(--subtext);
+    margin:12px 0 0;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:auto;
+    padding:26px 28px 34px;
+    border-top:1px solid var(--beige-line);
+  }
+  footer dl{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:8px 16px;
+    margin:0;
+  }
+  footer dt{
+    font-size:13px;
+    color:var(--olive-dark);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  footer dd{
+    font-size:13px;
+    color:var(--subtext);
+    margin:0;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="band">
+    <svg class="wisp" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 160C50 140 50 110 20 90C-10 70 -10 40 20 20" stroke="#F4EFE3" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M70 175C100 155 100 120 70 100C40 80 40 45 70 25" stroke="#F4EFE3" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M120 185C150 165 150 125 120 105C90 85 90 45 120 25" stroke="#F4EFE3" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">Amahana-dō</div>
+    <div class="location-line">In-room treatment at Hiyoshi Ryokan</div>
+  </div>
+
+  <div class="hero">
+    <h1>Let the road rest here, tonight.</h1>
+    <p>Traditional Thai massage, brought to your room by Kinnosuke Hori.</p>
+    <div class="pill"><span class="dot"></span>60 min · ¥12,000 · cash or card</div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="therapist">
+    <h2>About your therapist</h2>
+    <p class="name">Kinnosuke Hori</p>
+    <ul class="facts">
+      <li>22 years as a therapist, over 30,000 treatments given</li>
+      <li>Certified at Loi Kroh Traditional Thai Massage &amp; Yoga, Thailand</li>
+      <li>Has treated clients in Thailand and Australia</li>
+      <li>Everything is explained in English before we begin</li>
+    </ul>
+
+    <div class="philosophy">
+      My goal is simple: to help you let go of the fatigue of your journey, and feel at home in your body again.
+      <span class="signature">— Kinnosuke Hori</span>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="availability">
+    <h2>General availability</h2>
+    <p class="avail-note">A rough guide only &mdash; please book below to confirm your exact time.</p>
+    <div class="calendar-frame">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?height=360&wkst=1&ctz=Asia%2FTokyo&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&showTz=0&mode=WEEK&src=toksen.chichibu%40gmail.com&color=%234B5A3A"
+        style="border:0" width="100%" height="360" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <div class="cta-wrap">
+    <a class="cta" id="bookBtn" href="#" target="_blank" rel="noopener">Check availability &amp; book</a>
+    <p class="cta-note">Booking closes the evening before &middot; no oil, clothes stay on</p>
+  </div>
+
+  <footer>
+    <dl>
+      <dt>Reception</dt><dd>15:00–19:00 daily</dd>
+      <dt>Where</dt><dd>In your room at Hiyoshi Ryokan</dd>
+      <dt>Cancellations</dt><dd>Full charge on the day of treatment</dd>
+    </dl>
+  </footer>
+
+</div>
+
+<script>
+  // ------------------------------------------------------------
+  // Replace this with the real Google Calendar "Appointment
+  // schedule" booking link once it is created, e.g:
+  // https://calendar.app.google/xxxxxxxxxxxxxxxx
+  // ------------------------------------------------------------
+  const BOOKING_URL = "https://calendar.app.google/REPLACE-WITH-YOUR-LINK";
+  document.getElementById("bookBtn").href = BOOKING_URL;
+</script>
+
+</body>
+</html>
